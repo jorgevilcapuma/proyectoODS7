@@ -1,0 +1,102 @@
+#proyectos-exitosos .unique-card {
+    background-color: #fffdfb;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s, max-height 0.2s;
+    max-height: 250px;
+    width: 300px;
+    margin: 2rem;
+    position: relative;
+    left: 40px;
+}
+
+#proyectos-exitosos .unique-card:hover {
+    transform: scale(1.05);
+}
+
+#proyectos-exitosos .unique-card img {
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+    height: auto;
+}
+
+#proyectos-exitosos .unique-card-content {
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+#proyectos-exitosos .unique-card-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#proyectos-exitosos .unique-card-description {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem;
+}
+
+#proyectos-exitosos .unique-card.expanded {
+    max-height: 550px;
+}
+
+#proyectos-exitosos .unique-card.expanded .unique-card-content {
+    display: block;
+}
+
+
+
+
+/* aprte secion de las tarjetas */
+
+
+
+#acciones-individuales .unique-card {
+    background-color: #f5e6ca;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s, max-height 0.2s;
+    max-height: 250px;
+    width: 300px;
+    margin: 2rem;
+    position: relative;
+    left: 60px;
+}
+
+#acciones-individuales .unique-card:hover {
+    transform: scale(1.05);
+}
+
+#acciones-individuales .unique-card img {
+    display: block;
+    margin: 0 auto;
+    width: 85%;
+    height: auto;
+}
+
+#acciones-individuales .unique-card-content {
+    padding: 1rem;
+    text-align: center;
+    display: none;
+}
+
+#acciones-individuales .unique-card-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#acciones-individuales .unique-card-description {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem;
+}
+
+#acciones-individuales .unique-card.expanded {
+    max-height: 550px;
+}
+
+#acciones-individuales .unique-card.expanded .unique-card-content {
+    display: block;
+}

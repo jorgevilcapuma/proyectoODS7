@@ -1,0 +1,66 @@
+.carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-group {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 23px;
+    /* Espacio entre los ítems */
+}
+
+.carousel-item {
+    min-width: calc(33.33% - 22px);
+    /* Ajuste para la brecha */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Imágenes dentro de cada ítem */
+.carousel-item img {
+    width: 100%;
+    /* Imagen ocupa el ancho del ítem */
+    height: 450px;
+    /* Altura fija */
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+/* Superposición de texto */
+.carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Controles del carrusel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}

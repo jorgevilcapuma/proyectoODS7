@@ -1,0 +1,248 @@
+
+/* Contenedor principal del stack */
+#stack-container {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Configuración del stack */
+#stack-container .stack {
+    position: relative;
+    width: 400px;
+    height: 450px;
+    perspective: 1000px;
+    margin-top: 50px;
+}
+
+/* Configuración de imágenes en el stack */
+#stack-container .stack img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    transition: transform 1.2s ease-in-out, z-index 1.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#stack-container .stack img:not(:first-child) {
+    transform: translate(-50%, -50%) translateX(20px) rotateY(-10deg);
+}
+
+#stack-container .stack img.swap {
+    transform: translate(-50%, -50%) translateX(20px) rotateY(-10deg);
+    z-index: -1;
+}
+
+/* Configuración de las tarjetas dentro del stack */
+#stack-container .card {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    font-family: sans-serif;
+    font-size: 10rem;
+    background-color: transparent;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25), 0 15px 20px 0 rgba(0, 0, 0, 0.125);
+    transition: transform 0.6s;
+    user-select: none;
+}
+
+#stack-container .card img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    transition: transform 0.4s;
+    pointer-events: none;
+}
+/* Estilos para el stack */
+.stack-container {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.stack {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    perspective: 1000px;
+    margin-top: 50px;
+}
+
+/* Estilos específicos para las imágenes del stack */
+.stack img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    transition: transform 1.2s ease-in-out, z-index 1.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.stack img:not(:first-child) {
+    transform: translate(-50%, -50%) translateX(20px) rotateY(-10deg);
+}
+
+.stack img.swap {
+    transform: translate(-50%, -50%) translateX(20px) rotateY(-10deg);
+    z-index: -1;
+}
+
+/* Estilos específicos para las tarjetas del stack */
+.stack .card {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    font-family: sans-serif;
+    font-size: 10rem;
+    background-color: transparent;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25), 0 15px 20px 0 rgba(0, 0, 0, 0.125);
+    transition: transform 0.6s;
+    user-select: none;
+}
+
+.stack .card img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    transition: transform 0.4s;
+    pointer-events: none;
+}
+/* Animación de cambio entre tarjetas */
+.card:nth-last-child(n + 5) {
+    --x: calc(-50% + 90px);
+    transform: translate(var(--x), -50%) scale(0.85);
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
+}
+
+.card:nth-last-child(4) {
+    --x: calc(-50% + 60px);
+    transform: translate(var(--x), -50%) scale(0.9);
+}
+
+.card:nth-last-child(3) {
+    --x: calc(-50% + 30px);
+    transform: translate(var(--x), -50%) scale(0.95);
+}
+
+.card:nth-last-child(2) {
+    --x: calc(-50%);
+    transform: translate(var(--x), -50%) scale(1);
+}
+
+.card:nth-last-child(1) {
+    --x: calc(-50% - 30px);
+    transform: translate(var(--x), -50%) scale(1.05);
+}
+
+.card:nth-last-child(1) img {
+    box-shadow: 0 1px 5px 5px rgba(255, 193, 111, 0.5);
+}
+
+/* Animación para intercambiar tarjetas */
+.swap {
+    animation: swap 1.3s ease-out forwards;
+}
+
+@keyframes swap {
+    30% {
+        transform: translate(calc(var(--x) - 250px), -50%) scale(0.85) rotate(-5deg) rotateY(65deg);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+        z-index: -1;
+    }
+}
+
+/* Media queries para dispositivos más pequeños */
+@media (max-width: 1200px) {
+    .stack-container {
+        height: 40vh;
+    }
+
+    .stack {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .stack-container {
+        height: 35vh;
+    }
+
+    .stack {
+        width: 300px;
+        height: 300px;
+    }
+
+    .card {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media (max-width: 950px) {
+    .stack-container {
+        height: 30vh;
+    }
+
+    .stack {
+        width: 250px;
+        height: 250px;
+    }
+
+    .card {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media (max-width: 650px) {
+    .stack-container {
+        height: 25vh;
+    }
+
+    .stack {
+        width: 200px;
+        height: 200px;
+    }
+
+    .card {
+        width: 90%;
+        height: 90%;
+    }
+}
+
